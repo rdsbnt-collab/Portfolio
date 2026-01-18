@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-noise"></div>
+  <div class="bg-glow"></div>
+
+  <nav class="nav">
+    <div class="nav__logo">Reda Sabounti.</div>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#hero" class="nav__link nav__link--active">Accueil</a></li>
+      <li class="nav__item"><a href="#apropos" class="nav__link">À propos</a></li>
+      <li class="nav__item"><a href="#competences" class="nav__link">Compétences</a></li>
+      <li class="nav__item"><a href="#projets" class="nav__link">Projets</a></li>
+      <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <p class="hero__tagline">MONTAGE PHOTOS + DESIGN + WEB</p>
+        <h1 class="hero__title">
+          Je donne vie aux images et au web avec
+          <span class="text--gradient">mouvement</span> et
+          <span class="text--gradient-purple">créativité</span>.
+        </h1>
+        <p class="hero__desc">
+          Étudiant en BUT MMI. Je transforme les idées en expériences visuelles dynamiques et cohérentes.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projets" class="btn btn--primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn--secondary">Me contacter</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="planet">
+          <div class="planet__texture"></div>
+          <div class="planet__shadow"></div>
+          <div class="planet__ring"></div>
+        </div>
+      </div>
+
+      <div class="scroll">
+        <span class="scroll__text">SCROLL</span>
+        <div class="scroll__mouse">
+          <div class="scroll__wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section id="apropos" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">À propos</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card card--glass">
+            <h3 class="card__title">Mon Profil</h3>
+            <p class="card__text">
+              Étudiant en BUT MMI passionné. Objectif : mêler <strong>design</strong> et <strong>code</strong>.
+            </p>
+            <div class="tags">
+              <span class="tags__item">Photoshop</span>
+              <span class="tags__item">Illustrator</span>
+              <span class="tags__item">HTML / CSS</span>
+            </div>
+          </div>
+          <div class="card card--glass">
+            <h3 class="card__title">Ce que j'apporte</h3>
+            <ul class="list list--check">
+              <li>Des visuels qui racontent une histoire</li>
+              <li>Des Disgn UI/UX intuitifs</li>
+              <li>Des sites web accessibles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- COMPÉTENCES -->
+<section id="competences" class="section">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Compétences</h2>
+      <p class="section__subtitle">Niveau de maîtrise des outils</p>
+    </div>
+
+    <div class="skills">
+      <!-- Photoshop 50% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:50; --c:#31A8FF;">
+          <div class="skill__inner"></div>
+        </div>
+        <h3 class="skill__name">Photoshop</h3>
+        <div class="skill__icon">Ps</div>
+      </article>
+
+      <!-- Illustrator 50% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:50; --c:#FF9A00;">
+          <div class="skill__inner"></div>
+        </div>
+        <h3 class="skill__name">Illustrator</h3>
+        <div class="skill__icon" style="color:#FF9A00;">Ai</div>
+      </article>
+
+      <!-- HTML / CSS 30% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:30; --c:#E34F26;">
+          <div class="skill__inner"></div>
+        </div>
+        <h3 class="skill__name">HTML / CSS</h3>
+        <div class="skill__icon" style="color:#E34F26;">HTML/CSS</div>
+      </article>
+
+      <!-- PHP 25% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:25; --c:#8892BF;">
+          <div class="skill__inner"></div>
+        </div>
+        <h3 class="skill__name">PHP</h3>
+        <div class="skill__icon" style="color:#8892BF;">PHP</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Projets</h2>
+          <p class="section__subtitle">Sélection de travaux</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project__thumb">
+  <img src="imagesprojet-1.jpg" alt="Projet 1" class="project__img">
+</div>
+            <div class="project__content">
+              <div class="project__tags">
+                <span class="tags__item tags__item--small">Photoshop</span>
+                <span class="tags__item tags__item--small">Illustrator</span>
+              </div>
+              <h3 class="project__title">Design Graphique</h3>
+              <p class="project__desc"></p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__thumb">
+  <img src="imagesprojet-2.jpg" alt="Projet 2" class="project__img">
+</div>
+            <div class="project__content">
+              <div class="project__tags">
+                <span class="tags__item tags__item--small">Illustrator</span>
+              </div>
+              <h3 class="project__title">Illustration Vectorielle</h3>
+              <p class="project__desc"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__footer">
+  <a href="projets.html" class="btn btn--outline">Voir tout</a>
+</div>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Parcours</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline__event card card--glass">
+            <div class="timeline__dot"></div>
+            <span class="timeline__date">2025 — 2028</span>
+            <h4 class="timeline__title">BUT MMI</h4>
+            <p class="timeline__place">IUT de Corte</p>
+          </article>
+
+          <article class="timeline__event card card--glass">
+            <div class="timeline__dot"></div>
+            <span class="timeline__date">2024 — 2025</span>
+            <h4 class="timeline__title">Baccalauréat STMG</h4>
+            <p class="timeline__place">Lycée Pascal Paoli</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Discutons de votre projet</p>
+        </div>
+
+        <form class="form">
+          <div class="form__group">
+            <label for="name" class="form__label">Nom</label>
+            <input type="text" id="name" class="form__input" placeholder="Votre nom">
+          </div>
+          <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" class="form__input" placeholder="votre@email.fr">
+          </div>
+          <div class="form__group">
+            <label for="message" class="form__label">Message</label>
+            <textarea id="message" rows="4" class="form__input" placeholder="Parlez-moi de votre projet"></textarea>
+          </div>
+          <button type="submit" class="btn btn--full">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 - Portfolio MMI
+  </footer>
+
+</body>
+</html>
