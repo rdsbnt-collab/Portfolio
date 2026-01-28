@@ -243,6 +243,7 @@ h4 {
 
 
 /* --- PLANETE ANIMÉE (BEM: .planet) --- */
+/* --- ORB ANIMÉE --- */
 .hero__visual {
   width: 400px;
   height: 400px;
@@ -250,71 +251,47 @@ h4 {
   align-items: center;
   justify-content: center;
   position: relative;
-  perspective: 1000px;
 }
 
-.planet {
-  width: 300px;
-  height: 300px;
+.orb {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
   position: relative;
-  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #6cfaff, #5b23ff 40%, #1b0b33 75%);
+  box-shadow:
+    0 0 40px rgba(112, 0, 255, 0.7),
+    0 0 120px rgba(32, 0, 120, 0.9);
   overflow: hidden;
-  transform: rotateZ(-15deg);
-  box-shadow: 0 0 60px rgba(112, 0, 255, 0.4);
-  animation: floatPlanet 6s ease-in-out infinite;
-  z-index: 2;
+  animation: orb-rotate 12s linear infinite;
 }
 
-.planet__texture {
+.orb__inner {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
+  inset: -40%;
   background:
-    linear-gradient(to bottom, rgba(112,0,255,0.1) 0%, rgba(0,240,255,0.2) 20%, rgba(112,0,255,0.3) 40%, rgba(50,0,100,0.4) 50%, rgba(112,0,255,0.1) 100%),
-    repeating-linear-gradient(90deg, #3a0ca3 0px, #3a0ca3 2px, transparent 2px, transparent 4px),
-    linear-gradient(90deg, #240046, #7209b7, #4cc9f0, #7209b7, #240046);
-  background-size: 50% 100%;
-  animation: rotateTexture 30s linear infinite;
+    repeating-linear-gradient(
+      120deg,
+      rgba(255,255,255,0.25) 0,
+      rgba(255,255,255,0.25) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  animation: orb-lines 8s linear infinite;
 }
 
-.planet__shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  z-index: 3;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 40%, rgba(0,0,0,0.8) 85%, rgba(0,0,0,0.95) 100%);
-  box-shadow: inset -10px -10px 30px rgba(0,0,0,0.8);
+@keyframes orb-rotate {
+  0%   { transform: rotate(0deg) translateY(0); }
+  50%  { transform: rotate(180deg) translateY(-8px); }
+  100% { transform: rotate(360deg) translateY(0); }
 }
 
-.planet__ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 420px;
-  height: 120px;
-  border: 2px solid rgba(0, 240, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) rotateX(75deg) rotateY(10deg);
-  z-index: 1;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.2);
+@keyframes orb-lines {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-40%); }
 }
-
-/* Animations Keyframes */
-@keyframes floatPlanet {
-  0%, 100% { transform: rotateZ(-15deg) translateY(0); }
-  50% { transform: rotateZ(-15deg) translateY(-20px); }
-}
-
-@keyframes rotateTexture {
-  from { background-position: 0% center; }
-  to { background-position: -200% center; }
-}
-
 
 /* --- SCROLL MOUSE (BEM: .scroll) --- */
 .scroll {
@@ -703,7 +680,16 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+.scroll {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.7;
 }
+}
+
 /* Filtres projets */
 .projects-filters {
   display: flex;
@@ -798,60 +784,7 @@ a:hover {
   margin-bottom: 5px;
 }
 
-.skills {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 30px 0 20px;
-}
-
-.skill {
-  background: #0F0F16;
-  border: 1px solid var(--glass-border);
-  min-width: 160px;
-  padding: 30px 20px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  transition: 0.3s;
-}
-
-.skill:hover {
-  border-color: var(--primary);
-  transform: translateY(-3px);
-}
-
-.skill__gauge {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: conic-gradient(var(--c) calc(var(--p) * 1%), #222222 0deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skill__inner {
-  width: 65px;
-  height: 65px;
-  background: #0F0F16;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.skill__name {
-  font-size: 1rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.skill__icon {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #31A8FF;
+.btn:focus, .nav__link:focus, .form__input:focus {
+  outline: 2px solid #00F0FF;
+  outline-offset: 2px;
 }
