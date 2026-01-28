@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,7 @@
   <div class="bg-noise"></div>
   <div class="bg-glow"></div>
 
-  <nav class="nav">
+<nav class="nav" role="navigation" aria-label="Menu principal">
     <div class="nav__logo">Reda Sabounti.</div>
     <ul class="nav__list">
       <li class="nav__item"><a href="#hero" class="nav__link nav__link--active">Accueil</a></li>
@@ -30,38 +30,37 @@
   <main>
     <!-- HERO -->
     <section id="hero" class="hero">
-      <div class="hero__content">
-        <p class="hero__tagline">MONTAGE PHOTOS + DESIGN + WEB</p>
-        <h1 class="hero__title">
-          Je donne vie aux images et au web avec
-          <span class="text--gradient">mouvement</span> et
-          <span class="text--gradient-purple">créativité</span>.
-        </h1>
-        <p class="hero__desc">
-          Étudiant en BUT MMI. Je transforme les idées en expériences visuelles dynamiques et cohérentes.
-        </p>
+  <div class="hero__content">
+    <p class="hero__tagline">MONTAGE PHOTOS + DESIGN + WEB</p>
+    <h1 class="hero__title">
+      Je donne vie aux images et au web avec
+      <span class="text--gradient">mouvement</span> et
+      <span class="text--gradient-purple">créativité</span>.
+    </h1>
+    <p class="hero__desc">
+      Étudiant en BUT MMI. Je transforme les idées en expériences visuelles dynamiques et cohérentes.
+    </p>
 
-        <div class="hero__actions">
-          <a href="#projets" class="btn btn--primary">Voir mes projets</a>
-          <a href="#contact" class="btn btn--secondary">Me contacter</a>
-        </div>
-      </div>
+    <div class="hero__actions">
+      <a href="#projets" class="btn btn--primary">Voir mes projets</a>
+      <a href="#contact" class="btn btn--secondary">Me contacter</a>
+    </div>
 
-      <div class="hero__visual">
-        <div class="planet">
-          <div class="planet__texture"></div>
-          <div class="planet__shadow"></div>
-          <div class="planet__ring"></div>
-        </div>
+    <!-- souris de scroll déplacée ici -->
+    <div class="scroll">
+      <span class="scroll__text">SCROLL</span>
+      <div class="scroll__mouse">
+        <div class="scroll__wheel"></div>
       </div>
+    </div>
+  </div>
 
-      <div class="scroll">
-        <span class="scroll__text">SCROLL</span>
-        <div class="scroll__mouse">
-          <div class="scroll__wheel"></div>
-        </div>
-      </div>
-    </section>
+  <div class="hero__visual">
+  <div class="orb">
+    <div class="orb__inner"></div>
+  </div>
+</div>
+</section>
 
     <!-- A PROPOS -->
     <section id="apropos" class="section">
@@ -152,7 +151,7 @@
         <div class="projects-grid">
           <article class="project">
             <div class="project__thumb">
-  <img src="imagesprojet-1.jpg" alt="Projet 1" class="project__img">
+  <img src="imagesprojet-1.jpg" alt="Design graphique Photoshop Illustrator" width="400" height="250" loading="lazy" class="project__img">
 </div>
             <div class="project__content">
               <div class="project__tags">
@@ -166,7 +165,7 @@
 
           <article class="project">
             <div class="project__thumb">
-  <img src="imagesprojet-2.jpg" alt="Projet 2" class="project__img">
+  <img src="imagesprojet-2.jpg" alt="Illustration vectorielle Illustrator" width="400" height="250" loading="lazy" class="project__img">
 </div>
             <div class="project__content">
               <div class="project__tags">
@@ -181,6 +180,9 @@
         <div class="section__footer">
   <a href="projets.html" class="btn btn--outline">Voir tout</a>
 </div>
+</section>
+
+      <section id="parcours" class="section">
 
     <!-- PARCOURS -->
     <section id="parcours" class="section">
@@ -236,6 +238,6 @@
   <footer class="footer">
     &copy; 2026 - Portfolio MMI
   </footer>
-
+<form class="form" method="post" action="mailto:ton@email.com?subject=Contact">
 </body>
 </html>
