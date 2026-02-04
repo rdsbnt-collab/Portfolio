@@ -873,6 +873,7 @@ a:hover {
   margin-bottom: 5px;
 }
 
+
 .btn:focus, .nav__link:focus, .form__input:focus {
   outline: 2px solid #00F0FF;
   outline-offset: 2px;
@@ -896,12 +897,62 @@ a:hover {
   opacity: 1;
 }
 
-/* TOOLTIP COMPÉTENCES */
-.skills {
-  overflow: visible !important;
-  padding-bottom: 60px;
+.projet-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.projet-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,255,255,0.3);
+}
+
+.projet-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    pointer-events: auto;
+}
+
+
+.skills {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible !important;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  padding: 20px 10px 80px;
+  scrollbar-width: thin;
+}
+
+/* Taille fixe compétences */
+.skill {
+  flex: 0 0 170px;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Scrollbar violet stylée */
+.skills::-webkit-scrollbar {
+  height: 6px;
+}
+.skills::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+}
+.skills::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary), var(--cyan));
+  border-radius: 3px;
+}
+.skills::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* TOOLTIPS */
 .skill::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -910,14 +961,15 @@ a:hover {
   transform: translateX(-50%);
   background: rgba(0,0,0,0.95);
   color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
   z-index: 1000;
+  pointer-events: none;
 }
 
 .skill:hover::after {
@@ -926,42 +978,9 @@ a:hover {
   bottom: -55px;
 }
 
-/* SCROLL HORIZONTAL COMPÉTENCES */
-.skills {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 20px;
-  scroll-behavior: smooth;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #666 transparent;
-}
-
-.skills::-webkit-scrollbar {
-  height: 8px;
-}
-
-.skills::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.05);
-  border-radius: 4px;
-}
-
-.skills::-webkit-scrollbar-thumb {
-  background: rgba(112,0,255,0.5);
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.skills::-webkit-scrollbar-thumb:hover {
-  background: rgba(112,0,255,0.8);
-}
-
-/* SNAP pour arrêter sur chaque compétence */
-.skills {
-  scroll-snap-type: x mandatory;
-}
-
-.skill {
-  scroll-snap-align: center;
-  flex-shrink: 0;
+/* Mobile */
+@media (max-width: 768px) {
+  .skill {
+    flex: 0 0 140px;
+  }
 }
