@@ -11,7 +11,8 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page-loaded">
 
   <div class="bg-noise"></div>
   <div class="bg-glow"></div>
@@ -29,7 +30,7 @@
 
   <main>
     <!-- HERO -->
-    <section id="hero" class="hero">
+<section id="hero" class="hero">
   <div class="hero__content">
     <p class="hero__tagline">MONTAGE PHOTOS + DESIGN + WEB</p>
     <h1 class="hero__title">
@@ -46,7 +47,7 @@
       <a href="#contact" class="btn btn--secondary">Me contacter</a>
     </div>
 
-    <!-- souris de scroll déplacée ici -->
+    <!-- souris de scroll -->
     <div class="scroll">
       <span class="scroll__text">SCROLL</span>
       <div class="scroll__mouse">
@@ -56,10 +57,14 @@
   </div>
 
   <div class="hero__visual">
-  <div class="orb">
-    <div class="orb__inner"></div>
+    <div class="ship">
+      <div class="ship__body">
+        <div class="ship__cockpit"></div>
+      </div>
+      <div class="ship__ring"></div>
+      <div class="ship__glow"></div>
+    </div>
   </div>
-</div>
 </section>
 
     <!-- A PROPOS -->
@@ -72,7 +77,7 @@
           <div class="card card--glass">
             <h3 class="card__title">Mon Profil</h3>
             <p class="card__text">
-              Étudiant en BUT MMI passionné. Objectif : mêler <strong>design</strong> et <strong>code</strong>.
+              Étudiant en BUT MMI passionné par l'image et les nouvelles technologies, je me définis comme un profil hybride à la croisée du <strong>design</strong> et du <strong>code</strong>. Mon objectif est de transformer des idées complexes en expériences numériques fluides, esthétiques et surtout accessibles.
             </p>
             <div class="tags">
               <span class="tags__item">Photoshop</span>
@@ -83,9 +88,9 @@
           <div class="card card--glass">
             <h3 class="card__title">Ce que j'apporte</h3>
             <ul class="list list--check">
-              <li>Des visuels qui racontent une histoire</li>
-              <li>Des Disgn UI/UX intuitifs</li>
-              <li>Des sites web accessibles</li>
+              <li><strong>Visuel</strong> : Concevoir des images qui racontent une histoire et captivent l'utilisateur.</li>
+              <li><strong>UX Intuitive</strong> : Placer l'utilisateur au centre de la réflexion pour des interfaces claires et efficaces.</li>
+              <li><strong>Code Propre</strong> : Développer des sites web performants en respectant les standards du web et l'accessibilité.</li>
             </ul>
           </div>
         </div>
@@ -104,7 +109,7 @@
       <!-- Photoshop 50% -->
       <article class="skill">
         <div class="skill__gauge" style="--p:50; --c:#31A8FF;">
-          <div class="skill__inner"></div>
+          <div class="skill__inner">50%</div>
         </div>
         <h3 class="skill__name">Photoshop</h3>
         <div class="skill__icon">Ps</div>
@@ -113,32 +118,79 @@
       <!-- Illustrator 50% -->
       <article class="skill">
         <div class="skill__gauge" style="--p:50; --c:#FF9A00;">
-          <div class="skill__inner"></div>
+          <div class="skill__inner">50%</div>
         </div>
         <h3 class="skill__name">Illustrator</h3>
         <div class="skill__icon" style="color:#FF9A00;">Ai</div>
       </article>
 
-      <!-- HTML / CSS 30% -->
+      <!-- HTML -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:30; --c:#26e33f33
+;">
+          <div class="skill__inner">30%</div>
+        </div>
+        <h3 class="skill__name">HTML</h3>
+        <div class="skill__icon" style="color:#26e33f33;">HTML</div>
+      </article>
+
+        <!-- CSS -->
       <article class="skill">
         <div class="skill__gauge" style="--p:30; --c:#E34F26;">
-          <div class="skill__inner"></div>
+          <div class="skill__inner">30%</div>
         </div>
-        <h3 class="skill__name">HTML / CSS</h3>
-        <div class="skill__icon" style="color:#E34F26;">HTML/CSS</div>
+        <h3 class="skill__name">CSS</h3>
+        <div class="skill__icon" style="color:#E34F26;">CSS</div>
       </article>
 
       <!-- PHP 25% -->
       <article class="skill">
         <div class="skill__gauge" style="--p:25; --c:#8892BF;">
-          <div class="skill__inner"></div>
+          <div class="skill__inner">25%</div>
         </div>
         <h3 class="skill__name">PHP</h3>
         <div class="skill__icon" style="color:#8892BF;">PHP</div>
       </article>
+
+      <!-- Figma 50% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:50; --c:#F24E1E;">
+          <div class="skill__inner">50%</div>
+        </div>
+        <h3 class="skill__name">Figma</h3>
+        <div class="skill__icon" style="color:#F24E1E;">Fg</div>
+      </article>
+
+      <!-- Premiere Pro 20% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:20; --c:#9900FF;">
+          <div class="skill__inner">20%</div>
+        </div>
+        <h3 class="skill__name">Premiere Pro</h3>
+        <div class="skill__icon" style="color:#9900FF;">Pr</div>
+      </article>
+
+      <!-- DaVinci 60% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:60; --c:#F9C200;">
+          <div class="skill__inner">60%</div>
+        </div>
+        <h3 class="skill__name">DaVinci</h3>
+        <div class="skill__icon" style="color:#F9C200;">Dv</div>
+      </article>
+
+      <!-- Canva 70% -->
+      <article class="skill">
+        <div class="skill__gauge" style="--p:70; --c:#00C4B4;">
+          <div class="skill__inner">70%</div>
+        </div>
+        <h3 class="skill__name">Canva</h3>
+        <div class="skill__icon" style="color:#00C4B4;">Cv</div>
+      </article>
     </div>
   </div>
 </section>
+
 
     <!-- PROJETS -->
     <section id="projets" class="section">
@@ -238,6 +290,10 @@
   <footer class="footer">
     &copy; 2026 - Portfolio MMI
   </footer>
-<form class="form" method="post" action="mailto:ton@email.com?subject=Contact">
+<script>
+window.addEventListener('load', () => {
+  document.documentElement.classList.add('loaded');
+});
+</script> 
 </body>
 </html>
