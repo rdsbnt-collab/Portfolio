@@ -185,7 +185,51 @@ h4 {
   display: flex;
   gap: 15px;
 }
+/* --- ANIMATION D'ENTRÉE AU CHARGEMENT --- */
+.hero {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroLoad 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
 
+.hero__tagline {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero__title {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.hero__desc {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.hero__actions {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.hero__visual {
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out 1.1s both;
+}
+
+@keyframes heroLoad {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* --- BOUTONS (BEM: .btn) --- */
 .btn {
@@ -253,44 +297,86 @@ h4 {
   position: relative;
 }
 
-.orb {
+/* --- VAISSEAU SPATIAL --- */
+.ship {
+  position: relative;
   width: 260px;
   height: 260px;
+  animation: ship-float 5s ease-in-out infinite;
+}
+
+/* disque principal du vaisseau */
+.ship__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 90px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 30% 20%, #6cfaff, #5b23ff 40%, #1b0b33 75%);
+  background: radial-gradient(circle at 30% 20%, #ffffff, #7c3aed 35%, #1b1033 80%);
   box-shadow:
     0 0 40px rgba(112, 0, 255, 0.7),
-    0 0 120px rgba(32, 0, 120, 0.9);
-  overflow: hidden;
-  animation: orb-rotate 12s linear infinite;
+    0 0 90px rgba(32, 0, 120, 0.9);
 }
 
-.orb__inner {
+/* cockpit */
+.ship__cockpit {
   position: absolute;
-  inset: -40%;
-  background:
-    repeating-linear-gradient(
-      120deg,
-      rgba(255,255,255,0.25) 0,
-      rgba(255,255,255,0.25) 2px,
-      transparent 2px,
-      transparent 6px
-    );
-  mix-blend-mode: screen;
-  opacity: 0.7;
-  animation: orb-lines 8s linear infinite;
+  top: -35px;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 40% 40%;
+  background: radial-gradient(circle at 30% 20%, #e0f7ff, #3b82f6 70%);
+  box-shadow: 0 0 25px rgba(59,130,246,0.8);
 }
 
-@keyframes orb-rotate {
-  0%   { transform: rotate(0deg) translateY(0); }
-  50%  { transform: rotate(180deg) translateY(-8px); }
-  100% { transform: rotate(360deg) translateY(0); }
+/* anneau qui tourne */
+.ship__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 40px;
+  transform: translate(-50%, -50%) rotateX(70deg);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 240, 255, 0.5);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.6),
+    inset 0 0 10px rgba(0, 240, 255, 0.4);
+  animation: ship-ring-spin 10s linear infinite;
 }
 
-@keyframes orb-lines {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-40%); }
+/* glow autour du vaisseau */
+.ship__glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(112,0,255,0.35), transparent 70%);
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+/* flottement vertical du vaisseau */
+@keyframes ship-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* rotation de l’anneau */
+@keyframes ship-ring-spin {
+  0% {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg);
+  }
 }
 
 /* --- SCROLL MOUSE (BEM: .scroll) --- */
@@ -461,11 +547,15 @@ h4 {
   align-items: center;
   gap: 15px;
   transition: 0.3s;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .skill:hover {
+  z-index: 20;
+  transform: scale(1.05);
   border-color: var(--primary);
-  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(112, 0, 255, 0.4);
 }
 
 .skill__gauge {
@@ -500,7 +590,6 @@ h4 {
   font-weight: 900;
   color: #31A8FF;
 }
-
 
 /* --- PROJETS (BEM) --- */
 .projects-grid {
@@ -787,4 +876,92 @@ a:hover {
 .btn:focus, .nav__link:focus, .form__input:focus {
   outline: 2px solid #00F0FF;
   outline-offset: 2px;
+}
+
+.demo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-page__media a:hover .demo-overlay {
+  opacity: 1;
+}
+
+/* TOOLTIP COMPÉTENCES */
+.skills {
+  overflow: visible !important;
+  padding-bottom: 60px;
+}
+
+.skill::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.95);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.skill:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: -55px;
+}
+
+/* SCROLL HORIZONTAL COMPÉTENCES */
+.skills {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #666 transparent;
+}
+
+.skills::-webkit-scrollbar {
+  height: 8px;
+}
+
+.skills::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+
+.skills::-webkit-scrollbar-thumb {
+  background: rgba(112,0,255,0.5);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.skills::-webkit-scrollbar-thumb:hover {
+  background: rgba(112,0,255,0.8);
+}
+
+/* SNAP pour arrêter sur chaque compétence */
+.skills {
+  scroll-snap-type: x mandatory;
+}
+
+.skill {
+  scroll-snap-align: center;
+  flex-shrink: 0;
 }
